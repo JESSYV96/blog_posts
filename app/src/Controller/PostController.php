@@ -17,8 +17,7 @@ class PostController extends BaseController {
     public function home()
     {
         $posts = $this->postRepository->getPosts();
-        // var_dump($posts);
 
-        $this->render();
+        $this->render('Post/posts', ['posts' => $posts] , 'Posts');
     }
 }

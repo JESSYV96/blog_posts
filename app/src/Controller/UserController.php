@@ -18,8 +18,7 @@ class UserController extends BaseController {
     public function userList()
     {
         $users = $this->userRepository->getUsers();
-        var_dump($users);
-        $this->render();
+        $this->render('User/users', ['users' => $users], 'Users');
     }
 
     public function admin()

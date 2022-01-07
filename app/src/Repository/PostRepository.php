@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Post;
 use PDO;
 
 class PostRepository extends BaseRepository
@@ -9,9 +10,12 @@ class PostRepository extends BaseRepository
     public function getPosts(): array
     {
         $query = 'SELECT * FROM post';
-        $response = $this->PDO->query($query);
+        $posts = $this->PDO->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($posts as $post) {
+            $postsObj[] = new Post($post);
+        }
 
-        return $response->fetchAll(PDO::FETCH_ASSOC);
+        return $postsObj ?? [];
     }
 
 }

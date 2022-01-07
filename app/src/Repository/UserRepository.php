@@ -2,15 +2,19 @@
 
 namespace App\Repository;
 
-use PDO;
+use App\Entity\User;
 
 class UserRepository extends BaseRepository
 {
     public function getUsers(): array
     {
         $query = 'SELECT * FROM user';
-        $response = $this->PDO->query($query);
+        $users = $this->PDO->query($query);
 
-        return $response->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($users as $user) {
+            $arrObj[] = new User($user);
+        }
+
+        return $arrObj ?? [];
     }
 }
