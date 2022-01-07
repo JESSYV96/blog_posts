@@ -2,8 +2,6 @@
 
 require '../vendor/autoload.php';
 
-use App\Core\PDOFactory;
-
 $path = $_SERVER["REQUEST_URI"];
 $postController = new \App\Controller\PostController();
 $userController = new \App\Controller\UserController();

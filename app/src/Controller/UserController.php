@@ -6,7 +6,7 @@ namespace App\Controller;
 use App\Core\PDOFactory;
 use App\Repository\UserRepository;
 
-class UserController {
+class UserController extends BaseController {
 
     private UserRepository $userRepository;
 
@@ -19,7 +19,7 @@ class UserController {
     {
         $users = $this->userRepository->getUsers();
         var_dump($users);
-        echo 'Page utilisateur';
+        $this->render();
     }
 
     public function admin()
