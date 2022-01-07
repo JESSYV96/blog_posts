@@ -1,1 +1,21 @@
-<h1>Tout fonctionne !</h1>
+<?php
+
+require '../vendor/autoload.php';
+
+use App\Core\PDOFactory;
+
+$path = $_SERVER["REQUEST_URI"];
+$postController = new \App\Controller\PostController();
+$userController = new \App\Controller\UserController();
+
+switch ($path) {
+        case '/':
+            $postController->home();
+            break;
+        case "/userlist":
+            $userController->userList();
+            break;
+        case '/admin':
+            $userController->admin();
+            break;
+}
