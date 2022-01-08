@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\User;
 
 
+use App\Controller\BaseController;
 use App\Core\PDOFactory;
 use App\Repository\UserRepository;
 
@@ -21,8 +22,4 @@ class UserController extends BaseController {
         $this->render('User/users', ['users' => $users], 'Users');
     }
 
-    public function admin()
-    {
-        echo 'admin';
-    }
 }

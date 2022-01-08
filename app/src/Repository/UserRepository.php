@@ -17,4 +17,17 @@ class UserRepository extends BaseRepository
 
         return $arrObj ?? [];
     }
+
+    public function getUserById(int $id): User|bool
+    {
+        $query = $this->PDO->prepare("SELECT * FROM user WHERE id = :id");
+        $query->bindValue('id', $id);
+        $query->execute();
+        $query->setFetchMode(\PDO::FETCH_ASSOC);
+
+        if (!$result = $query->fetch()) {
+            return false;
+        }
+        return new User($result);
+    }
 }

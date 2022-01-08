@@ -16,6 +16,8 @@ services:
     database_blog:
         image: 'mariadb:10.6.4'
         restart: always
+        ports:
+            -   '3306:3306'
         env_file:
             - .env
             - .env.local
@@ -24,10 +26,10 @@ services:
         #    - ./database/mt4-data.sql:/docker-entrypoint-initdb.d/mt4-data.sql
 
 
-    phpmyadmin:
-        image: phpmyadmin
-        restart: always
-        ports:
-            - '8080:80'
-        environment:
-            - PMA_ARBITRARY=1
+    #phpmyadmin:
+    #    image: phpmyadmin
+    #    restart: always
+    #    ports:
+    #        - '8080:80'
+    #    environment:
+    #        - PMA_ARBITRARY=1

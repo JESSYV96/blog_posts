@@ -7,8 +7,8 @@ class Post extends BaseEntity
 {
     private string $title;
     private string $content;
+    private \DateTime $publishedAt;
     private int $authorId;
-
 
     public function __construct(array $data)
     {
@@ -69,5 +69,23 @@ class Post extends BaseEntity
         return $this;
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getPublishedAt(): \DateTime
+    {
+        return  $this->publishedAt;
+    }
+
+    /**
+     * @param string $publishedAt
+     * @return Post
+     * @throws \Exception
+     */
+    public function setPublishedAt(string $publishedAt): Post
+    {
+        $this->publishedAt = new \DateTime($publishedAt);
+        return $this;
+    }
 
 }

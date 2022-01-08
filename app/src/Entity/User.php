@@ -7,6 +7,7 @@ class User extends BaseEntity
     private string $firstname;
     private string $lastname;
     private string $email;
+    private bool $isAdmin;
 
     public function __construct(array $data)
     {
@@ -67,5 +68,21 @@ class User extends BaseEntity
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return $this->isAdmin;
+    }
 
+    /**
+     * @param bool $isAdmin
+     * @return User
+     */
+    public function setIsAdmin(bool $isAdmin): User
+    {
+        $this->isAdmin = $isAdmin;
+        return $this;
+    }
 }
