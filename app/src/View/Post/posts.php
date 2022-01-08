@@ -1,12 +1,12 @@
 <?php
 
-use App\Entity\Post;
+use App\Model\PostDTO;
 
 ?>
 
 <div class="flex mt-12">
     <?php
-    /** @var Post[] $posts */
+    /** @var PostDTO[] $posts */
     foreach ($posts as $post): ?>
         <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
             <a href="#" class="w-full block h-full">
@@ -21,7 +21,7 @@ use App\Entity\Post;
                     <div class="flex mt-4">
                         <div class="flex flex-col justify-between text-sm">
                             <p class="text-gray-800 dark:text-white mb-1">
-                                Write by : Jean Jacques
+                                Write by : <?php echo "{$post->getFirstname()} {$post->getLastname()}"; ?>
                             </p>
                             <p class="text-gray-400 dark:text-gray-300">
                                 <?php echo "{$post->getPublishedAt()->format('d M Y')}"; ?>
