@@ -12,8 +12,9 @@ class Post extends BaseEntity
 
     public function __construct(array $data)
     {
-        $this->hydrate($data);
+        parent::__construct($data);
     }
+
 
     /**
      * @return string
@@ -87,5 +88,4 @@ class Post extends BaseEntity
         $this->publishedAt = new \DateTime($publishedAt);
         return $this;
     }
-
 }

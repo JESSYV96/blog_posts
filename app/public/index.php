@@ -18,6 +18,9 @@ switch ($path) {
     case '/article/create':
         $postController->createArticle();
         break;
+    case '/article/1':
+        $postController->postDetails();
+        break;
     case "/users":
         $userController->userList();
         break;

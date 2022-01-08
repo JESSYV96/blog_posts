@@ -4,7 +4,7 @@
             <div class="flex items-center justify-between h-12">
                 <div class=" flex items-center">
                     <a class="flex-shrink-0" href="/">
-                        <img class="h-10 w-10" src="./champi.jpeg"/>
+                        <img class="h-10 w-10" src="./images/champi.jpeg"/>
                     </a>
                     <div>
                         <div class="ml-10 flex items-baseline space-x-4">

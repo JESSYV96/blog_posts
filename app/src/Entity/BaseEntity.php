@@ -10,6 +10,11 @@ abstract class BaseEntity
 
     use Hydrate;
 
+    public function __construct(array $data)
+    {
+        $this->hydrate($data);
+    }
+
     /**
      * @return int
      */
@@ -27,4 +32,6 @@ abstract class BaseEntity
         $this->id = $id;
         return $this;
     }
+
+
 }

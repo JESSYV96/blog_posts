@@ -11,7 +11,7 @@ class User extends BaseEntity
 
     public function __construct(array $data)
     {
-        $this->hydrate($data);
+        parent::__construct($data);
     }
 
     /**
