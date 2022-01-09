@@ -31,6 +31,7 @@ class PostRepository extends BaseRepository
     {
         $query = '
             SELECT
+                post.id,
                 post.title, post.content, post.publishedAt,
                 user.firstname, user.lastname
             FROM post

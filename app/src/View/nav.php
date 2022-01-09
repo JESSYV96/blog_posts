@@ -13,8 +13,8 @@
                                 Home
                             </a>
                             <a class="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
-                               href="/article/create">
-                                Write an article
+                               href="/post/create">
+                                Write an post
                             </a>
                             <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
                                href="/users">

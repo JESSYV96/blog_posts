@@ -18,10 +18,9 @@ class PostController extends BaseController {
         $this->commentRepository = new CommentRepository(PDOFactory::getMysqlConnection());
     }
 
-    public function home()
+    public function posts()
     {
         $posts = $this->postRepository->getPosts();
-
         $this->render('Post/posts', ['posts' => $posts] , 'Posts');
     }
 
@@ -33,7 +32,7 @@ class PostController extends BaseController {
         $this->render('Post/post', ['post' => $post, 'comments' => $comments] , 'Post details');
     }
 
-    public function createArticle()
+    public function createPost()
     {
         $this->render('Post/add_post', [] , 'Add a new post');
     }

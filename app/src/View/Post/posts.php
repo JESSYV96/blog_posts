@@ -1,7 +1,5 @@
 <?php
-
-use App\Model\PostDTO;
-
+    use App\Model\PostDTO;
 ?>
 
 <div class="flex mt-12">
@@ -9,7 +7,7 @@ use App\Model\PostDTO;
     /** @var PostDTO[] $posts */
     foreach ($posts as $post): ?>
         <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-            <a href="/article/1" class="w-full block h-full">
+            <a href="/post/1" class="w-full block h-full">
                 <img alt="blog photo" src="./images/mario_luigi.jpeg" class="max-h-40 w-full object-cover"/>
                 <div class="bg-white dark:bg-gray-800 w-full p-4">
                     <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
@@ -29,7 +27,7 @@ use App\Model\PostDTO;
                         </div>
                     </div>
                     <div class="flex items-center flex-wrap">
-                        <a href="/article/1" class="inline-flex items-center dark:text-white md:mb-2 lg:mb-0">Learn More
+                        <a href="/post/1" class="inline-flex items-center dark:text-white md:mb-2 lg:mb-0">Learn More
                             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                  fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12h14"></path>

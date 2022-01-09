@@ -16,7 +16,7 @@ class UserController extends BaseController {
         $this->userRepository = new UserRepository(PDOFactory::getMysqlConnection());
     }
 
-    public function userList()
+    public function users()
     {
         $users = $this->userRepository->getUsers();
         $this->render('User/users', ['users' => $users], 'Users');

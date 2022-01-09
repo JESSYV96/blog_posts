@@ -1,0 +1,16 @@
+# Post routes
+posts:
+    path: /
+    controller: PostController
+    action: posts
+
+post:
+    path: /posts/1
+    controller: PostController
+    action: post
+
+# User routes
+users:
+    path: /users
+    controller: UserController
+    action: users

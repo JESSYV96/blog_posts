@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\CommentController;
 use App\Controller\PostController;
 use App\Controller\User\AdminController;
 use App\Controller\User\UserController;
@@ -10,21 +11,31 @@ $path = $_SERVER["REQUEST_URI"];
 $postController = new PostController();
 $userController = new UserController();
 $adminController = new AdminController();
+$commentController = new CommentController();
 
 switch ($path) {
     case '/':
-        $postController->home();
+        $postController->posts();
         break;
-    case '/article/create':
-        $postController->createArticle();
+    case '/post/create':
+        $postController->createPost();
         break;
-    case '/article/1':
+    case '/post/1':
+        //var_dump($_SERVER);
         $postController->postDetails();
         break;
     case "/users":
-        $userController->userList();
+        $userController->users();
         break;
     case '/admin':
         $adminController->admin();
         break;
+    case '/comment/add':
+        $commentController->createComment($_POST);
+        break;
+    case '/comment/delete':;
+        $commentController->deleteComment(intval($_POST['commentId']));
+        break;
+    default:
+        echo 'not route found';
 }

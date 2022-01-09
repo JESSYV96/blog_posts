@@ -4,10 +4,13 @@ namespace App\Model;
 
 use App\Core\Hydrate;
 
-final class PostDTO
+class PostDTO
 {
+    private int $id;
     private string $title;
     private string $content;
+    //TODO: Now it's empty find a way to get comment by post
+    private array $comments;
     private \DateTime $publishedAt;
     private string $firstname;
     private string $lastname;
@@ -17,6 +20,24 @@ final class PostDTO
     public function __construct(array $data)
     {
         $this->hydrate($data);
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return PostDTO
+     */
+    public function setId(int $id): PostDTO
+    {
+        $this->id = $id;
+        return $this;
     }
 
     /**
@@ -52,6 +73,24 @@ final class PostDTO
     public function setContent(string $content): PostDTO
     {
         $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getComments(): array
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param array $comments
+     * @return PostDTO
+     */
+    public function setComments(array $comments): PostDTO
+    {
+        $this->comments = $comments;
         return $this;
     }
 
@@ -109,6 +148,4 @@ final class PostDTO
         $this->lastname = $lastname;
         return $this;
     }
-
-
 }
